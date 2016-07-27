@@ -1,0 +1,25 @@
+body{
+    margin-top: 2%;
+    margin-left:4%;
+    margin-right:8%;
+    margin-bottom:2%;
+}
+select{
+    width: 100px;
+}
+/*input[type="url"]{*/
+/*width: 80%;*/
+/*}*/
+.key{
+    width:48%;
+}
+.value{
+    width:48%;
+}
+
+#newRequestBtn{
+    float: right;
+}
+.hide{
+    display: none;
+}
