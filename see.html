@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +9,7 @@
 </head>
 <body>
 <div class="container-fluid">
-    <form name="myform" >
+    <form name="myform" action="#">
         <span class="form-inline form-group">
             <label for="favorite">Saved Requests: </label>
             <select name="favorites" title="Favorites" class="form-control" id="favorite"></select>
@@ -41,7 +40,7 @@
                 <div class="form-group form-inline query" id="query0">
                     <input type="text" placeholder="Key" class="form-control queryKey" name="key" >
                     <input type="text" placeholder="Value" class="form-control queryValue" name="value" >
-                    <button class="btn btn-danger" type="button">
+                    <button class="btn btn-danger" type="button" onclick="deleteRow(this);">
                         <i class="icon-trash icon-white"></i> <!--icon does not work-->
                         Delete
                     </button>
@@ -54,7 +53,7 @@
                 <div class="form-group form-inline header" id="header0">
                     <input type="text" placeholder="Key" class="form-control HeaderKey" name="key">
                     <input type="text" placeholder="Value" class="form-control HeaderValue" name="value">
-                    <button class="btn btn-danger" type="button" >
+                    <button class="btn btn-danger" type="button" onclick="deleteRow(this);">
                         <i class="icon-trash icon-white"></i> <!--icon does not work-->
                         Delete
                     </button>
@@ -79,6 +78,18 @@
             <button class="btn btn-primary" id="sendBtn" type="button">SEND</button>
         </div>
     </form>
+    <div>
+
+    </div>
+
+    <div class="jumbotron">
+        <h3>Response</h3>
+        <br><br>
+        <textarea title="responseOutput" rows="20" id="responseOutput">&nbsp;</textarea>
+        <!--<p>...</p>-->
+        <!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>-->
+    </div>
+
 
     <script src="scripts/see.js" type="text/javascript"></script>
 </div>

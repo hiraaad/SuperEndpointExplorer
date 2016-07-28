@@ -23,3 +23,9 @@ select{
 .hide{
     display: none;
 }
+
+
+#responseOutput{
+    width: 95%;
+    height:120%;
+}
