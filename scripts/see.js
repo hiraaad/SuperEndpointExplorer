@@ -57,12 +57,19 @@ window.onload = function () {
     
     document.getElementById('saveBtn').onclick = saveIt;
     document.getElementById('sendBtn').onclick = sendRequest;
-
+    document.getElementById('favorite').onchange = menuItems;
 };
 
 
 var RequestObject = {};
 
+function menuItems(){
+    var select = document.getElementById('favorite');
+    var value  = select.options[select.selectedIndex].value;
+    RequestObject = localStorage.getItem(value);
+    console.log(RequestObject);
+    //console.log(localStorage.getItem(value));
+}
 function saveIt() {
     makeObject();
     var savedName = RequestObject.savedName;
@@ -75,6 +82,8 @@ function saveIt() {
         option.appendChild(document.createTextNode(savedName));
         favorite.appendChild(option);
         option.setAttribute("value", savedName);
+        //option.onclick = "menuItems(this);";
+
     }
 }
 
