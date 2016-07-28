@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container-fluid">
-    <form name="myform" action="#">
+    <form name="myform">
         <span class="form-inline form-group">
             <label for="favorite">Saved Requests: </label>
             <select name="favorites" title="Favorites" class="form-control" id="favorite"></select>
@@ -27,17 +27,19 @@
                     <option value="patch">PATCH</option>
                     <option value="delete">DELETE</option>
                 </select>
-                <input type="url" title="url" class="form-control" id="url" placeholder="www.google.com" required="">
+                <input type="url" title="url" class="form-control" id="url" placeholder="https://www.google.com" required>
                 <button class="btn btn-secondary" id="paramsBtn" type="button">Add Parameters</button>
                 <div class="form-group">
                     <label for="requestName">Request Name: </label>
-                    <input type="text" class="form-control" id="requestName" name="requestName" placeholder="Request Name">
+                    <input type="text" class="form-control" id="requestName" name="requestName" required
+                           placeholder="Request Name" title="Must be Alphanumeric">
                 </div>
+                <span id="helpBlock2" class="help-block"></span>
             </div>
 
             <!--Query -->
             <div class="form-group hide" id="queries">
-                <div class="form-group form-inline query" id="query0">
+                <div class="form-group form-inline query hide" id="query0">
                     <input type="text" placeholder="Key" class="form-control queryKey" name="key" >
                     <input type="text" placeholder="Value" class="form-control queryValue" name="value" >
                     <button class="btn btn-danger" type="button" onclick="deleteRow(this);">
@@ -50,7 +52,7 @@
             <button class="btn btn-secondary form-group" id="addHeader" type="button">Add header</button>
             <div class="form-group hide" id="headers">
                 <h2>Header</h2>
-                <div class="form-group form-inline header" id="header0">
+                <div class="form-group form-inline header hide" id="header0">
                     <input type="text" placeholder="Key" class="form-control HeaderKey" name="key">
                     <input type="text" placeholder="Value" class="form-control HeaderValue" name="value">
                     <button class="btn btn-danger" type="button" onclick="deleteRow(this);">
@@ -61,15 +63,19 @@
             </div>
             <br><br>
             <div class="form-group form-inline">
-                <button class="btn btn-secondary" id="saveBtn" type="button">Save!</button>
+                <button class="btn btn-secondary" type="button" id="saveBtn">Save!</button>
             </div>
         </div>
 
-        <div class="panel panel-default preview">
+        <div class="panel panel-default preview" >
             <div class="panel-heading">
                 <h3 class="panel-title">Preview</h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body" id="preview">
+                <span style="font-weight: bold; font-size: x-large;">URL:</span>
+                <span id="urlPreview"></span>
+                <h2>Headers</h2>
+                <span id="headerPreview"></span>
                 <!--The request preview goes here-->
             </div>
         </div>

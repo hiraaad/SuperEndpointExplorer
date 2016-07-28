@@ -7,9 +7,6 @@ body{
 select{
     width: 100px;
 }
-/*input[type="url"]{*/
-/*width: 80%;*/
-/*}*/
 .key{
     width:48%;
 }
@@ -24,8 +21,22 @@ select{
     display: none;
 }
 
+#urlPreview{
+    font-size: large;
+}
 
+#headerPreview{
+    font-size: large;
+}
 #responseOutput{
     width: 95%;
     height:120%;
+}
+#httpMethod{
+    font-weight: bold;
+    font-size: large;
+}
+#helpBlock2{
+    font-color:red;
+    font-weight: bold;
 }
